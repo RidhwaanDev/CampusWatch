@@ -10,12 +10,15 @@ import android.util.Log;
 import com.a2017.unamed.campuswatch.CrimeManager;
 import com.a2017.unamed.campuswatch.Model.Crime;
 import com.a2017.unamed.campuswatch.Utils.Utils;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,6 +31,7 @@ public class Geotask extends AsyncTask<GoogleMap,Void,Void> {
     private Context mContext;
     private CrimeManager mCrimeManager;
 
+    private  List<Crime> dbCrimes;
     private GoogleMap mGoogleMap;
     Geocoder geocoder;
 
@@ -43,12 +47,9 @@ public class Geotask extends AsyncTask<GoogleMap,Void,Void> {
         super.onPostExecute(aVoid);
         addMarkersFrom(mGoogleMap);
 
-        List<Crime> dbCrimes = mCrimeManager.getDBCrimes();
+        dbCrimes = mCrimeManager.getDBCrimes();
 
 
-        for(Crime crime: dbCrimes){
-            Log.d("GEO LOCATE" , "  db debugging " + crime.getLat() + "  " + crime.getLng());
-        }
 
 
     }
@@ -134,7 +135,7 @@ public class Geotask extends AsyncTask<GoogleMap,Void,Void> {
     public void addMarkersFrom(GoogleMap googleMap){
 
         List<Crime> crimes = mCrimeManager.getDBCrimes();
-
+        final List<Circle> cricleArray = new ArrayList<>();
 
 
         for (Crime crime: crimes) {
@@ -144,8 +145,9 @@ public class Geotask extends AsyncTask<GoogleMap,Void,Void> {
             Log.d("TEST","  LAT LNG   " +latLng.toString());
 
 
-            Circle circle = googleMap.addCircle(new CircleOptions()
+            final Circle circle = googleMap.addCircle(new CircleOptions()
                     .clickable(true)
+                    .visible(false)
                     .radius(5)
                     .center(latLng));
 
@@ -172,7 +174,32 @@ public class Geotask extends AsyncTask<GoogleMap,Void,Void> {
 
             }
 
+
+            cricleArray.add(circle);
+
         }
+
+
+        mGoogleMap.setOnCameraMoveStartedListener(new GoogleMap.OnCameraMoveCanceledListener() {
+            @Override
+            public void onCameraMove() {
+
+                LatLngBounds bounds = mGoogleMap.getProjection().getVisibleRegion().latLngBounds;
+
+                for(Circle circle: cricleArray){
+                    if(bounds.contains(circle.getCenter())){
+                        circle.setVisible(true);
+
+                    } else {
+                        circle.setVisible(false);
+                    }
+
+                }
+            }
+        });
+
+
+
     }
 
 }

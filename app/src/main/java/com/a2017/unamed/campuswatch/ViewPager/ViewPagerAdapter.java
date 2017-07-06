@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-    final int tabSize = 2;
+    final int tabSize = 1;
     private String[] data = {"Map", "Data"};
 
     public ViewPagerAdapter(FragmentManager fm) {

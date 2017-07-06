@@ -1,10 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.google.android.gms.maps.MapView
+        xmlns:map="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/mapView" />
-</LinearLayout>
+
+
+    <LinearLayout
+
+
+        android:id="@+id/bottom_sheet"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:clipToPadding="true"
+        android:background="@color/colorBottomSheet"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:clickable="true"
+            android:id="@+id/bottom_sheet_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:textSize="28sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="4dp"
+                   android:textStyle="bold"
+                android:text="Map Key"
+                 />
+
+            <RadioButton
+                android:buttonTint="@color/colorRed"
+                android:clickable="false"
+                android:checked="true"
+                android:layout_marginLeft="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:elevation="0dp" />
+
+            <RadioButton
+                android:buttonTint="@color/colorYellow"
+                android:clickable="false"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:elevation="0dp" />
+
+            <RadioButton
+                android:buttonTint="@color/colorGreen"
+                android:clickable="false"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:elevation="0dp" />
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:buttonTint="@color/colorRed"
+                android:clickable="false"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:elevation="0dp" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="64dp"
+                android:text="Serious crime         "
+                />
+            <CheckBox
+                android:buttonTint="@color/colorWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="32dp"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:checked="true"
+                android:buttonTint="@color/colorYellow"
+                android:elevation="0dp" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="64dp"
+                android:text="Non-serious crime "
+                />
+            <CheckBox
+                android:buttonTint="@color/colorWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="32dp"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+             <RadioButton
+                  android:checked="true"
+                 android:buttonTint="@color/colorGreen"
+                 android:clickable="false"
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:elevation="0dp" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="64dp"
+                android:text="Trivial crimes          "
+                />
+            <CheckBox
+                android:buttonTint="@color/colorWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="32dp"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

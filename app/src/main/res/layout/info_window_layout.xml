@@ -1,6 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:paddingRight="8dp"
+            android:id="@+id/icon_info"
+             >
+
+            <RadioButton
+                android:id="@+id/crime_code_red"
+                android:buttonTint="@color/colorRed"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:elevation="0dp" />
+
+            <RadioButton
+                android:id="@+id/crime_code_yellow"
+                android:buttonTint="@color/colorYellow"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:elevation="0dp" />
+
+            <RadioButton
+                android:id="@+id/crime_code_green"
+                android:buttonTint="@color/colorGreen"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:elevation="0dp" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Murder with weapon"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="4dp"
+                android:id="@+id/crime_name_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+
+                android:textColor="@color/colorWhite"
+                android:text="New Brunswick"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="4dp"
+                android:id="@+id/crime_location_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="12/20/17"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="4dp"
+                android:id="@+id/crime_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="cleared by arrest"
+                android:layout_marginTop="8dp"
+                android:id="@+id/crime_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

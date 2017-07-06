@@ -16,4 +16,5 @@ public class MapActivity extends SingleFragmentActivity {
     public Fragment createFragment() {
         return new MapFragment();
     }
+
 }

@@ -21,7 +21,6 @@ public class GraphFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.layout_graph_fragment,container,false);
 
-        ExcelManager e = new ExcelManager(getActivity());
         return v;
     }
 
