@@ -73,6 +73,8 @@ public class RegionTask extends AsyncTask<GoogleMap,Void,Void> {
 
         } else {
             Log.d("MARKER INVISIBLE",  "   " + " MARKER IS INVISIBLE");
+            // git test
+            marker.setVisible(false);
 
             return false;
         }
