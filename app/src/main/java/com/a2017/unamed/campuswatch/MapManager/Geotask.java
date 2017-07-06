@@ -180,7 +180,7 @@ public class Geotask extends AsyncTask<GoogleMap,Void,Void> {
         }
 
 
-        mGoogleMap.setOnCameraMoveStartedListener(new GoogleMap.OnCameraMoveCanceledListener() {
+      /*  mGoogleMap.setOnCameraMoveStartedListener(new GoogleMap.OnCameraMoveCanceledListener() {
             @Override
             public void onCameraMove() {
 
@@ -196,7 +196,12 @@ public class Geotask extends AsyncTask<GoogleMap,Void,Void> {
 
                 }
             }
-        });
+
+            @Override
+            public void onCameraMoveCanceled() {
+
+            }
+        });*/
 
 
 
